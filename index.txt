@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Matthew Wiseman</title>
+
+  <!-- Elegant serif: EB Garamond fallback to Georgia/serif -->
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --accent: #0b2a5b;          /* dark blue */
+      --text: #1a1a1a;
+      --muted: #5a5a5a;
+      --bg: #ffffff;
+      --alt: #f3f7ff;             /* very light blue */
+      --maxw: 920px;
+    }
+    html { scroll-behavior: smooth; }
+    body{
+      margin:0;
+      color:var(--text);
+      background:var(--bg);
+      font-family:"EB Garamond", Georgia, serif;
+      line-height:1.65;
+      font-size:19px;
+    }
+    /* Hero */
+    .hero{
+      width:100%;
+      aspect-ratio: 21/7;         /* wide landscape; adjusts responsively */
+      overflow:hidden;
+      background:#ddd;
+    }
+    .hero img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
+    /* Title under hero */
+    .title-wrap{
+      max-width:var(--maxw);
+      margin: 28px auto 10px auto;
+      padding: 0 20px;
+      text-align:center;
+    }
+    h1{
+      margin:0;
+      font-size: clamp(36px, 4.5vw, 54px);
+      font-weight:600;
+      letter-spacing: 0.5px;
+      color: var(--accent);
+    }
+    /* Section scaffolding with alternating backgrounds */
+    section{
+      padding: 48px 20px;
+    }
+    .container{
+      max-width:var(--maxw);
+      margin:0 auto;
+    }
+    .alt{ background: var(--alt); }
+    h2{
+      font-size: clamp(26px, 3.2vw, 32px);
+      color: var(--accent);
+      margin: 0 0 18px 0;
+      font-weight:600;
+      letter-spacing: 0.3px;
+    }
+    p, li { color: var(--text); }
+    a{ color: var(--accent); text-decoration: none; border-bottom: 1px solid rgba(11,42,91,0.25); }
+    a:hover{ border-bottom-color: rgba(11,42,91,0.55); }
+
+    /* About layout: text left, headshot right */
+    .about{
+      display:grid;
+      grid-template-columns: 1.3fr 0.9fr;
+      gap: 28px;
+      align-items:start;
+    }
+    .headshot{
+      width: 220px;
+      max-width:100%;
+      border-radius: 8px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+      margin-left: auto; /* push to right edge of column */
+      display:block;
+    }
+    .subtle{
+      color:var(--muted);
+      margin-top:8px;
+      font-size: 0.95em;
+    }
+    .btn{
+      display:inline-block;
+      padding: 10px 14px;
+      border:1.5px solid var(--accent);
+      color:var(--accent);
+      border-radius: 8px;
+      text-decoration:none;
+      line-height:1.2;
+    }
+    .btn:hover{
+      background: var(--accent);
+      color: #fff;
+    }
+    /* Lists */
+    ol {
+      padding-left: 22px;
+    }
+    /* Footer spacer */
+    footer{
+      padding: 24px 20px 60px 20px;
+      text-align:center;
+      color: var(--muted);
+      font-size: 0.95em;
+    }
+    /* Mobile tweaks */
+    @media (max-width: 760px){
+      .about{
+        grid-template-columns: 1fr;
+      }
+      .headshot{
+        margin: 6px 0 0 0;
+        justify-self: start;
+      }
+      section{ padding: 38px 18px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Full-width landscape hero image -->
+  <div class="hero" aria-label="Landscape banner image">
+    <!-- Replace hero.jpg with your file name -->
+    <img src="hero.jpg" alt="Landscape photograph" />
+  </div>
+
+  <!-- Centered title under hero -->
+  <div class="title-wrap">
+    <h1>Matthew Wiseman</h1>
+  </div>
+
+  <!-- About (white background) -->
+  <section id="about">
+    <div class="container about">
+      <div>
+        <h2>About</h2>
+        <p>
+          I am a graduate student in philosophy at the University of Southern California. My research
+          focuses on moral and political philosophy, especially intergenerational justice, Rawlsian
+          theory, and overlapping-generations models in economics.
+        </p>
+        <p class="subtle">
+          Email: <a href="mailto:your.email@usc.edu">your.email@usc.edu</a>
+        </p>
+      </div>
+      <div>
+        <!-- Your headshot to the right -->
+        <img class="headshot" src="headshot.jpg" alt="Headshot of Matthew Wiseman" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Research (very light blue background) -->
+  <section id="research" class="alt">
+    <div class="container">
+      <h2>Research</h2>
+      <p>
+        Short paragraph about your research agenda—fields of interest, current projects, and how they connect.
+      </p>
+
+      <h3 style="margin-top:22px; color:var(--accent);">Publications</h3>
+      <ol>
+        <li>“Article Title,” <em>Journal Name</em>, Year.</li>
+        <li>“Another Article,” <em>Another Journal</em>, Year.</li>
+        <li>“Working Title,” <em>Under review</em>.</li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- Teaching (white background) -->
+  <section id="teaching">
+    <div class="container">
+      <h2>Teaching</h2>
+      <ul>
+        <li>PHIL 1: Introduction to Philosophy — USC, Fall 2025.</li>
+        <li>PHIL 340: Ethics — USC, Spring 2025.</li>
+        <li>Teaching Assistant, Social &amp; Political Philosophy — USC, 2024.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- CV (very light blue background) -->
+  <section id="cv" class="alt">
+    <div class="container">
+      <h2>CV</h2>
+      <p>
+        Download a full CV here:
+        <a class="btn" href="cv.pdf" target="_blank" rel="noopener">Download CV (PDF)</a>
+      </p>
+    </div>
+  </section>
+
+  <footer>
+    © Matthew Wiseman — Last updated 2025
+  </footer>
+
+</body>
+</html>
