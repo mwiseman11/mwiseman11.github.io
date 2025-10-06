@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<link href="favicon32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="favicon64.png" rel="icon" sizes="64x64" type="image/png"/>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Matthew Wiseman</title>
+<!-- Elegant serif -->
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<style>
+    :root{
+      --accent: #0b2a5b;
+      --text: #1a1a1a;
+      --muted: #5a5a5a;
+      --bg: #ffffff;
+      --alt: #f3f7ff;
+      --maxw: 920px;
+      --radius: 8px;
+      --gap: 14px;
+    }
+    html { scroll-behavior: smooth; }
+    body{
+      margin:0;
+      color:var(--text);
+      background:var(--bg);
+      font-family:"EB Garamond", Georgia, serif;
+      line-height:1.65;
+      font-size:19px;
+    }
+    a{ color: var(--accent); text-decoration: none; border-bottom: 1px solid rgba(11,42,91,0.25); }
+    a:hover{ border-bottom-color: rgba(11,42,91,0.55); }
+
+    /* Title section on light blue */
+    .title-sec{
+      background: var(--alt);
+      padding: 24px 20px 10px;
+    }
+    .title-wrap{
+      max-width:var(--maxw);
+      margin: 0 auto;
+      text-align:center;
+    }
+    h1{
+      margin: 0 0 5px 0; /* 5px bottom margin for gap */
+      font-size: clamp(36px, 4.5vw, 54px);
+      font-weight:600;
+      letter-spacing: 0.5px;
+      color: var(--accent);
+    }
+
+    /* Top nav */
+    .topnav{
+      margin-top: 0; /* no extra gap */
+      display: flex;
+      justify-content: center;
+      gap: 22px;
+      flex-wrap: wrap;
+    }
+    .topnav a{
+      border-bottom: none;
+      color: var(--accent);
+    }
+    .topnav a:hover{ text-decoration: underline; }
+
+    /* Generic sections */
+    section{ padding: 48px 20px; }
+    .container{ max-width:var(--maxw); margin:0 auto; }
+    .alt{ background: var(--alt); }
+    h2{
+      font-size: clamp(26px, 3.2vw, 32px);
+      color: var(--accent);
+      margin: 0 0 18px 0;
+      font-weight:600;
+      letter-spacing: 0.3px;
+    }
+    h3{
+      margin-top:22px;
+      color:var(--accent);
+      font-size: clamp(21px, 2.6vw, 24px);
+    }
+
+    /* About layout */
+    .about-grid{
+      display:grid;
+      grid-template-columns: 1.3fr 0.9fr;
+      gap: 28px;
+      align-items: center;
+    }
+    .about-text{ text-align: justify; }
+    .meta{
+      color:var(--muted);
+      margin-top:10px;
+      font-size: 0.95em;
+      display: inline-flex;
+      align-items: baseline;
+      gap: var(--gap);
+      flex-wrap: wrap;
+    }
+    .meta .email{
+      color: var(--accent);
+      border-bottom: none;
+    }
+    .headshot{
+      width: 240px;
+      max-width:100%;
+      border-radius: var(--radius);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+      margin-left: auto;
+      display:block;
+      background:#eee;
+      object-fit: cover;
+      aspect-ratio: 1 / 1;
+    }
+
+    /* Publications list */
+    ul.pubs{ padding-left: 40px; list-style: disc; }
+    .pub-item{ margin-bottom: 12px; }
+    .toggle{
+      border: none;
+      background: transparent;
+      cursor: pointer;
+      font-size: 1.2em;
+      margin-left: 8px;
+      padding: 0 4px;
+      line-height: 1;
+    }
+    .toggle:focus{ outline: 1px dashed var(--accent); outline-offset: 2px; }
+    .abstract{ display: none; margin: 8px 0 0 0; }
+    .abstract p{ margin: 0; }
+    .abstract strong{ font-weight: 600; }
+
+    @media (max-width: 760px){
+      .about-grid{ grid-template-columns: 1fr; }
+      .headshot{ margin: 12px 0 0 0; justify-self: start; }
+      section{ padding: 38px 18px; }
+    }
+  </style>
+</head>
+<body>
+<div class="title-sec">
+<div class="title-wrap">
+<h1>Matthew Wiseman</h1>
+<nav aria-label="Section navigation" class="topnav">
+<a href="#about">About</a>
+<a href="#research">Research</a>
+<a href="#teaching">Teaching</a>
+</nav>
+</div>
+</div>
+<section id="about">
+<div class="container about-grid">
+<div class="about-text">
+<h2>About</h2>
+<p>I am a PhD candidate in philosophy at the <a href="https://dornsife.usc.edu/" target="_blank" rel="noopener">University of Southern California</a>, working primarily in moral and political philosophy. My research focuses
+          on what we owe to the vulnerable voiceless, especially to future generations, and how our democratic institutions can best
+          enable us to meet these obligations.</p>
+<p>Before coming to USC, I completed an Honours degree in philosophy at the Australian National University, and a Bachelor of Arts and a Diploma 
+          of Mandarin at the University of Melbourne.</p>
+<p>While at ANU, I co-founded the <a href="https://upja.online/" rel="noopener" target="_blank">Undergraduate Philosophy Journal of Australasia</a> 
+        with <a href="https://www.kidalin.com/" rel="noopener" target="_blank">Kida Lin</a>.</p>
+<p class="meta">
+<span class="email">mrwisema[at]usc[dot]edu</span>
+<a href="cv.pdf" rel="noopener" target="_blank">CV</a>
+<a href="https://philpeople.org/profiles/matthew-wiseman" rel="noopener" target="_blank">PhilPeople</a>
+</p>
+</div>
+<div><img alt="Headshot of Matthew Wiseman" class="headshot" src="headshot.jpg"/></div>
+</div>
+</section>
+<section class="alt" id="research">
+<div class="container">
+<h2>Research</h2>
+<h3>Publications</h3>
+<ul class="pubs">
+<li class="pub-item">
+<a href="https://www.cambridge.org/core/journals/economics-and-philosophy/article/abs/on-synchronic-direct-intergenerational-reciprocity-a-reply-to-corvino/7DD542651BFFA4610E8F19E7FBFE7420" rel="noopener" target="_blank">
+            “On Synchronic Direct Intergenerational Reciprocity: A Reply to Corvino,” <em>Economics &amp; Philosophy</em>, 2025
+          </a>
+<button aria-controls="abs1" aria-expanded="true" class="toggle">▾</button>
+<div class="abstract" id="abs1">
+<p><strong>Abstract.</strong> Fausto Corvino has recently argued in this journal that, given present people’s reasonable expectation of future people’s economic activity, present and future people stand in the relation required by both of the two main camps of justice as reciprocity: justice as self-interested reciprocity and justice as fair reciprocity. In reply, I argue that on neither view is the relation Corvino identifies the relation the view requires and that neither view endorses his principle of intergenerational distributive justice, Transgenerational Sufficiency, in a contract between generations. I show that these concerns generalize to any view of synchronic direct intergenerational reciprocity.</p>
+</div>
+</li>
+</ul>
+<h3>In Progress…</h3><p>I have an ongoing project interrogating Rawls's defense of his just savings principle.</p>
+<ul>
+<li>A paper identifying and solving a new problem for Rawls’s just savings principle. (<strong>Under review</strong>)</li>
+<li>A paper offering a new solution to Rawls’s problem of the first generation. (<strong>Under review</strong>)</li>
+</ul>
+<p> And I'm currently working on the following papers based on chapters of my thesis defending the case for providing political representation to future citizens.</p>
+<ul>
+<li>A paper claiming that providing such representation satisfies our duties of intergenerational procedural justice.</li><li>A paper showing that representing future people is conceptually coherent.</li><li>A paper arguing that representing future people can be democratically legitimate, even in the absence of authorization and accountability.</li><li>A paper arguing that representing future people can be democratically legitimate, despite the epistemic limitations of such representatives.</li></ul>
+</div>
+</section>
+<section id="teaching">
+<div class="container">
+<h2>Teaching</h2>
+<p>I have experience teaching the following courses, ranging over political philosophy, PPE, normative and applied ethics, and philosophy of law.</p>
+<h3>Primary Instructor, USC</h3>
+<ul>
+<li>‘PHIL 340: Ethics’ — Spring 2026</li>
+<li>‘Philosophy of Economic Markets, Money &amp; Property’, USC Summer Programs — Summer 2024<br/><span style="color:var(--muted)">Co-taught with <a href="https://amcleani.github.io/" target="_blank" rel="noopener">Antonio Maria Cleani</a> and <a href="https://www.yashasapir.com/" target="_blank" rel="noopener">Yashir Sapir</a></span></li>
+<li>‘Philosophy of Economic Markets, Money &amp; Property,’ USC Summer Programs — Summer 2023<br/><span style="color:var(--muted)">Co-taught with <a href="https://www.davidjclark.net/" target="_blank" rel="noopener">David Clark</a> and <a href="https://www.yashasapir.com/" target="_blank" rel="noopener">Yasha Sapir</a></span></li>
+<li>‘Ethics in the 21st Century,’ USC Summer Programs — Summer 2022<br/><span style="color:var(--muted)">Co-taught with Charlotte Figueroa and <a href="https://sites.google.com/usc.edu/laurasiscoe/home" target="_blank" rel="noopener">Laura Siscoe</a></span></li>
+</ul>
+<h3>Teaching Assistant, USC</h3>
+<ul>
+<li>‘Introduction to Philosophy, Politics, Economics and Law’, <a href="https://jakemonaghan.com/" target="_blank" rel="noopener">Jake Monaghan</a> — Fall 2025</li>
+<li>‘Philosophy of Law’, <a href="https://dornsife.usc.edu/scottsoames/" target="_blank" rel="noopener">Scott Soames</a> — Spring 2024</li>
+<li>‘Ethical Theory and Practice’, <a href="https://sites.google.com/view/jakeross/home" target="_blank" rel="noopener">Jacob Ross</a> — Fall 2023</li>
+<li>‘Freedom, Equality, and Social Justice’, <a href="https://dornsife.usc.edu/profile/jonathan-quong/" target="_blank" rel="noopener">Jonathan Quong</a> — Spring 2022</li>
+<li>‘Ethics, Technology, and Value’, <a href="https://sites.google.com/view/jakeross/home" target="_blank" rel="noopener">Jacob Ross</a> — Fall 2021</li>
+</ul>
+</div>
+</section>
+<script>document.addEventListener('DOMContentLoaded', function(){
+  document.querySelectorAll('.toggle').forEach(btn => {
+    const panel = document.getElementById(btn.getAttribute('aria-controls'));
+    if (panel) panel.style.display = 'block';
+    btn.addEventListener('click', () => {
+      const current = window.getComputedStyle(panel).display;
+      const isOpen = current !== 'none';
+      panel.style.display = isOpen ? 'none' : 'block';
+      btn.setAttribute('aria-expanded', String(!isOpen));
+      btn.textContent = isOpen ? '▸' : '▾';
+    });
+  });
+});</script>
+</body>
+</html>
